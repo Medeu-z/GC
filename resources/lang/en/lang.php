@@ -1,0 +1,3 @@
+<?php
+return ['l' => 'ENG','welcome' => 'Welcome to Grades Calculated', 'question' => 'What does this website?','goal' => 'The purpose of this website is to calculate the total grades of courses. This site tracks and saves grades. You will just add your grades, then with the help of this site can see your grades and progress of current courses that you are passing.', 'motivation' => 'Achieve your goals with us !','sign' => 'Sign Up', 'login' => 'Log in', 'fill' => 'Please fill in this form to create an account.', 'fn' => 'First Name:','ln'=>'Last Name:','bd'=>'Birthday:','email'=>'Email:','psw'=>'Password:','cancle'=>'Cancel','fb'=>'User with this email exists!']
+?>
