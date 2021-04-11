@@ -71,7 +71,7 @@
          @endif
         
           <a href="{{ url('welcome/logout') }}"><i  class="fa fa-close" style="color: black; float: right;"></i></a>
-        <form action="http://localhost/GC/public/insert" method = "post" >
+        <form action="{{  route('file.ins')}}" method = "post" >
             {{ csrf_field() }}
             <div class="blank"><p>{{__('lang.fn')}}</p><input type="text" name="Fname" required></div>
             <div class="blank"><p>{{__('lang.ln')}}</p><input type="text" name="Lname" required></div>

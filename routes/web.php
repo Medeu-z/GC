@@ -34,7 +34,7 @@ Route::get('/{lang?}/welcome/signup', function ($lang ="eng") {
 	App::setlocale($lang);
     return view('signup');
 });
-Route::post('/insert','App\Http\Controllers\UsersController@insert');
+Route::post('/insert','App\Http\Controllers\UsersController@insert')->name('file.ins');
 Route::post('/welcome/success/insert','App\Http\Controllers\CoursesController@insert')->name('file.upload');
 Route::post('/store','App\Http\Controllers\AssessmentsController@insert');
 Route::get('/welcome/success/dell','App\Http\Controllers\CoursesController@delete')->name('file.del');
