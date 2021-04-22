@@ -21,7 +21,14 @@
         alert("We successfully subscribed!");
 
     }
-    
+    function sout(){
+       n  = window.location.href;
+       window.location.href = n.substring(0, n.lastIndexOf('/')-8);
+ /*         console.log(window.location.href = e)
+   console.log() alert();
+*/
+   
+    }
     function togglePassword() {
     var togglePassword = document.querySelector('#togglePassword');
     var password = document.querySelector('#pwd');
@@ -70,9 +77,10 @@
          </div>
          @endif
         
-          <a href="{{ url('welcome/logout') }}"><i  class="fa fa-close" style="color: black; float: right;"></i></a>
+          <a  onclick="sout()"><i  class="fa fa-close" style="color: black; float: right;"></i></a>
         <form action="{{  route('file.ins')}}" method = "post" >
             {{ csrf_field() }}
+        
             <div class="blank"><p>{{__('lang.fn')}}</p><input type="text" name="Fname" required></div>
             <div class="blank"><p>{{__('lang.ln')}}</p><input type="text" name="Lname" required></div>
             <div class="blank"><p>{{__('lang.bd')}}</p><input type="date" name="bday"  required></div>
@@ -88,7 +96,7 @@
     </div>
 
 <script>
- /*$("#su").click(function(event){
+ /*href="{{  route('sout') }}"$("#su").click(function(event){
     event.preventDefault();
       let Fname = $("input[name=Fname]").val();
       let Lname = $("input[name=Lname]").val();

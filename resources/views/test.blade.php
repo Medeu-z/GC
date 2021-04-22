@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Grade Calculator</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <!--   <link rel="stylesheet" type="text/css" href="{{ asset('css/acc.css')}}"> -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
         <link rel="icon"  type = "image/x-icon" href = " https://cdn2.iconfinder.com/data/icons/social-messaging-productivity-4/128/calculator3-512.png"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -14,47 +13,42 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <style >
-            body{
-             background-color: hsl(0, 0%, 95%);
-            }
-            .inContainer1{
+  <style>
+    body{
+      background-color: hsl(0, 0%, 95%);
+    }
+    .inContainer1{
       margin: 15px 0 50px 0;
       display: flex;}
     .class1{
       border-radius: 4px;
-      /*//box-shadow:  0 2px 3px hsl(0, 0%, 85%);*/
-        box-shadow: 10px 20px 20px black;
+      box-shadow: 10px 10px 20px black;
       width: 95%;
       height: 60%;
-      
       padding-top: 30px;
       margin-bottom: 20px;
-        }
-    
-        #ch24{
-           box-shadow: 10px 20px 20px black;
-        }
-        .class4{
-        
-          margin-bottom: 5px;
-          width: 100%;
-          background-color: grey;
-        }
-        .some1{
+    }
+    #ch24{
+      box-shadow: 10px 10px 20px black;
+    }
+    .class4{
+      margin-bottom: 5px;
+      width: 100%;
+      background-color: grey;
+    }
+    .some1{
       border-radius: 5px;
       background-color: white;
       box-shadow:  0 2px 3px hsl(0, 0%, 85%);
-     /* height: 240px;*/
       width: 350px;
       margin-left: 40px;
       margin-right: 50px;
       padding: 0 30px 30px 30px;
     }
     .some1 p{
-         font-size: 15px;
+      font-size: 15px;
       color: grey;}
-    #b2{/*less .button1;*/
+    #b2{
       background-color: #4F1AC6;
       width: 90%;
       height: 15%;
@@ -67,8 +61,7 @@
       margin-bottom: 15px;}
 
     #class2{
-      /*.hr;*/
-            border-radius: 5px 5px 0px 0px;
+      border-radius: 5px 5px 0px 0px;
       margin-top: 0px;
       margin-bottom: 25px;
       margin-left: -30px;
@@ -76,16 +69,13 @@
       width:350px;
       background: linear-gradient(to right,#555555 0, #CDC9C3 50%,#D9E4DD 100%);}
     #class3{
-      /*.hr;*/
-            border-radius: 5px 5px 0px 0px;
+      border-radius: 5px 5px 0px 0px;
       margin-top: 0px;
       margin-bottom: 25px;
       margin-left: -30px;
       height: 5px;
       width: 350px;
       background: linear-gradient(to right,#555555 0, #CDC9C3 50%,#D9E4DD 100%);}
-    
-  
       .hrc{
         margin-top: -8px;
         
@@ -102,7 +92,6 @@
         padding-right: 1%;
 
       }
-    /*  ok*/
       .two1{
          
         display: flex;
@@ -122,10 +111,8 @@
   }
  }
 
-
-/*del up*/
 .class31{  
-  box-shadow: 10px 20px 20px black; 
+  box-shadow: 10px 10px 20px black; 
   padding-right: 25px;
   margin-bottom: 20px;}
 .ch6{
@@ -184,23 +171,17 @@ main {
  
 }
 
-/*main > h1, p, .browser {
-  font-size: 90%;
-}
-*/
 .browser {
   box-shadow:"10px 20px 20px black";
   background: white;
   border-radius: 5px;
   margin: 10px;
   padding: 5px;
-
 }
 
 .browser progress{
   width: 55%;
   height: 15px;
- /* border-radius: 5px;*/
   margin-top: -10px;
  
  }
@@ -230,18 +211,14 @@ main {
   display: none;
   flex-direction: column;
 }
-/*#selectAss{
-  
-  flex-direction: column;
+.blank{
+  display: inline-flex;
 }
-#selectAss div{
-   display:inline-flex;
-    margin-top: 10px;
+.curDiv > input,select{
+   width: 60%;
 }
-*/
-.curDiv > input, p,select{
+.curDiv  p{
    width: 40%;
-  /*display: none;*/
 }
 input , select{
    border-radius: 5px;
@@ -253,32 +230,27 @@ input , select{
    
 }
         </style>
-       <!--  <script type="text/javascript">
-             function mouseover(id){
-        
-        if(document.getElementById(id).style.boxShadow == "lightblue 10px 10px 10px"){
-            d=false;
-        }else{ d=true;document.getElementById(id).style.boxShadow = "10px 20px 20px black";}
-         
-
-    } /*"0px 0px 0px black"*/
-    function mouseout(id){
-    if(d==true){
-    document.getElementById(id).style.boxShadow = "10px 20px 20px black";  
-    }
-
-    }
-        </script> -->
         <script >
+            function langChan(e){
+         n  = window.location.href;
+          console.log(window.location.href = e)
+
+        }
           function addCourseF(){
-         /*   $("#addCourse").show();*/
         
             document.getElementById("addCourse").style.display = 'flex';
             document.getElementById("addCourseButton").style.display = 'none';
             document.getElementById("addClose").style.display = 'flex';
-         
-        /*  $("#addCourseButton").hide();*/
 
+         }
+         function opset(){
+          document.getElementById("settings").style.display = 'flex';
+          document.getElementById("si").style.display = 'flex';
+         }
+        
+         function clset(){
+          document.getElementById("settings").style.display = 'none';
+          document.getElementById("si").style.display = 'none';
          }
         
          function closeAddC(){
@@ -290,34 +262,15 @@ input , select{
            document.getElementById("assNumber").value="";
            document.getElementById("goal").value="";
            document.getElementById("image").value="";
-           /*document.getElementById("pwd").value="";*/
+           
          }
 
-                 /* 
-                  <article class="browser">
-     <h2>Course name</h2><hr>
-     <div><h6>0</h6><h6>%</h6>
-      <i class="bi bi-trash" style="margin-left: 70px;"></i></div>
-  </article>
-                 div.style.width="80%";
-                  div.style.display="inline-flex";
-                  
-                   div.appendChild(i); 
-
-                   var pa = document.createElement("textarea");  
-                   pa.style.width="100%";
-                   pa.style.height="50px";
-                   pa.style.marginLeft="50px";
-                   pa.disabled = true;
-                  
-                   var com = document.getElementById("comments").value;
-                   pa.innerHTML = com;                
-                   div.appendChild(pa); */
+            
              n  = window.location;
     function acc(e){
       
        window.location = n+"/acc/"+e;
-       /*  $("#overlay1").show();*/
+       
     }    
     
         </script>
@@ -327,39 +280,83 @@ input , select{
 <div class="header">
   <a href="#default" class="logo"><img src="https://cdn2.iconfinder.com/data/icons/social-messaging-productivity-4/128/calculator3-512.png" width="25px" height="25px" style="margin-top: -9px; margin-left: 5px;">Grade Calculator</a>
   <div class="header-right"> 
-    <a href=""><i class="bi bi-file-earmark-text"></i>About Us</a>
-    <a href=""><i class="bi bi-gear"></i> Settings</a>
-    <a href="{{ url('welcome/logout') }}"><i class="bi bi-box-arrow-right"></i>LogOut</a>
+    <a href=""><i class="bi bi-file-earmark-text"></i>{{__('lang.main')}}</a>
+    <a onclick="opset()"><i class="bi bi-gear"></i>{{__('lang.sett')}}</a>
+    
+          <a>  <select style="background-color: transparent;width: 100px;" onchange="langChan(this.value)">
+                <option>{{__('lang.l')}}</option>
+                <option value="{{ url('/welcome/success/kz/') }}">KZ</option>
+                <option value="{{ url('/welcome/success/ru/') }}">RU</option>
+                <option value="{{ url('/welcome/success/eng/') }}">ENG</option>
+            </select>  
+        </a>
+        
+    <a href="{{ url('welcome/logout') }}"><i class="bi bi-box-arrow-right"></i>{{__('lang.lo')}}</a>
   </div>
 </div>
-    <div class="Container1" >
-      <div class="inContainer1" >
+  
+      <div class="inContainer1 Container1" >
 
-              
 <main class="class1" id="shadow"  style="flex-wrap: wrap;">
-<!--  -->
+
+
+<i onclick="clset()" id="si"class="fa fa-close" style="color: black; float: right;margin-right: 10px;display: none;background-color: " ></i>
+<div class="Settings" id="settings" style="display: none;flex-direction: column;margin-bottom: 100px;" onclick="opset()">
+        <h4>{{__('lang.uai')}}</h4>
+        <div id="fl">
+           
+        <form action="{{  route('uup')}}" method = "post" >
+            {{ csrf_field() }}
+
+            <div> <hr class="class4"></div>
+            <input  type="Number" style="display: none;" id="userid2" name="userid" value="{{ Auth::user()->id }}" required>
+            <div class="curDiv"><p>{{__('lang.fn')}}</p><input type="text" name="Fname" required></div><br>
+            <div class="curDiv"><p>{{__('lang.ln')}}</p><input type="text" name="Lname" required></div><br>
+            <div class="curDiv"><p style="margin-right: 52px;">{{__('lang.bd')}}</p><input type="date" name="bday"  required></div><br>
+            <div class="curDiv"><p style="margin-right: 20px;">{{__('lang.email')}}</p><input type="email" name="email" required></div><br>
+            <div class="curDiv"><p style="margin-right: 10px;">{{__('lang.psw')}}</p><input  type="text" id="pwd" name="password" required></div><br>
+          
+            <div><button  type="submit" class="btn butt" style="float: right;">{{__('lang.uinf')}}</button></div>  
+        </form>     
+        <form action="{{  route('dup')}}" method = "get" >
+            {{ csrf_field() }}
+
+            <input  type="Number" style="display: none;" id="userid" name="userid" value="{{ Auth::user()->id }}" required>
+            <div><button  type="submit" class="btn butt" style="float: right;">{{__('lang.dacc')}}</button></div>    
+        </form>     
+        </div>
+
+       <hr class="class4">
+  </div>
+
+
+
+
+
+
+
 <div>
-  <h2>Course list
-  <button type="button" class="btn btn-sml butt" id="addCourseButton" onclick="addCourseF()">Add Course</button>
-    <button type="button"  class="btn butt" onclick="closeAddC()" style="display: none;" id="addClose">Close</button></h2>
+  <h2>{{__('lang.listc')}}
+    <button type="button" class="btn btn-sml butt" id="addCourseButton" onclick="addCourseF()">{{__('lang.addc')}}</button>
+    <button type="button"  class="btn butt" onclick="closeAddC()" style="display: none;" id="addClose">{{__('lang.close')}}</button>
+  </h2>
   <form action="{{  route('file.upload')}}" method = "post" enctype="multipart/form-data">
             {{ csrf_field() }}
-  <div id="addCourse">
+    <div id="addCourse">
      <hr class="class4">
      
-      <div class="curDiv"><input  type="Number" style="display: none;" id="userid" name="userid" value="{{ Auth::user()->id }}" required></div>
+      <div class="curDiv"><input  type="Number" style="display: none;" id="userid1" name="userid" value="{{ Auth::user()->id }}" required></div>
       <div class="curDiv"><input  type="Number" style="display: none;" id="curper" name="curper" value="0" required></div>
-      <div class="curDiv"><p>Course Name:</p><input type="text" id="cn" name="course" required></div>
-      <div class="curDiv"><p>Course Image:</p><input type="file"  id="photo" name="photo" value="Course Image" required></div>
-      <div class="curDiv"><p>Number of Assessment methods:</p><input type="Number" id="assNumber" name="AssMethNum" max="10" min="2" required></div>  <div class="curDiv"><p>Your goal from this course:</p><input  type="Number" id="goal" name="goalPersent" max="100" min="0" required></div>
+      <div class="curDiv"><p>{{__('lang.namec')}}</p><input type="text" id="cn" name="course" required></div>
+      <div class="curDiv"><p>{{__('lang.img')}}</p><input type="file"  id="photo" name="photo" value="Course Image" required></div>
+      <div class="curDiv"><p>{{__('lang.nass')}}</p><input type="Number" id="assNumber" name="AssMethNum" max="30" min="2" required></div>  <div class="curDiv"><p>{{__('lang.cgoal')}}</p><input  type="Number" id="goal" name="goalPersent" max="100" min="0" required></div>
       <div style="display: inline-flex;margin-left: 60%;margin-top: 10px;">
-         <button id = "add" type="submit" class="btn butt">Add</button>
+         <button id = "add" type="submit" class="btn butt">{{__('lang.add')}}</button>
          
       </div>
-    </form> </div>
+  </form> 
+</div>
      
-    <!-- onclick="addCourseOne()" -->
-  
 
  <hr class="class4">
 
@@ -386,21 +383,23 @@ $sql = "SELECT * FROM courses where users_id = $uid";
                
                 
               ?>
-<!-- href="{{ url('acc/<?php echo $id; ?>') }}" "{{ url('acc/?uid=<?php echo $id; ?>') }}http://localhost/GC/public/acc/<?php echo $id; ?>" -->
       
 <a   style="color: black;text-decoration: none;" onclick="acc('<?php echo $id; ?>')"> 
 
   <div class="browser" >
+      <?php 
+       
+         echo ' <img src="http://localhost/GC/public/image/' . $row['CourseImage'] . '" height="49px" width="50px" style="border-radius: 25px;margin-bottom: 5px;"/>';
+     ?>
      
-     <!--  <img src="{{URL::asset('<?php echo $img;?>')}}" style="border-radius: 25px;margin-bottom: 5px;" height="49px" width="50px" > -->
      <label for="fi" style="width: 15%; margin-left: 5px;"><?php echo $name ?>: <?php echo $id ?></label>
     <progress id="fi" value="<?php echo $per ?>" max="100"></progress>
      <div><h6><?php echo $per ?></h6><h6>%</h6>
-      <form action="{{  route('file.del')}}" method = "get"> {{ csrf_field() }}
+      <form action="{{  route('file.dell')}}" method = "POST" enctype="multipart/form-data"> {{ csrf_field() }}
       <input style="display: none;" type="Number" name="cid" value="<?php echo $id; ?>" required>
       <button  type="submit" class="btn"style="margin-left: 20px;margin-top: -25px;"><i class="bi bi-trash" ></i></button>
-    
-   </div></form>
+    </form>
+   </div>
   </div>
 
 </a>
@@ -418,41 +417,40 @@ $sql = "SELECT * FROM courses where users_id = $uid";
 
 
 </main>
-<script >
-          /*function open(){
-         window.location= window.location.href  + "/acc";
-        }*/
-  
-</script>
 
           <div class="two1">
          
           <div class="class31 some1" id="ch23"><hr id="class3">
-           <!--  <div class="w" style="margin-left: 60%;"><button class="btn"><i class="bi bi-gear" ></i> Settings</button></div> -->
-            <div class="w"><p>User:</p><h6 id="FName" class="ch6">{{ Auth::user()->Fname }} {{ Auth::user()->Lname }}</h6></div><hr class="hrc">
-            <div class="w"><p>Birhday:</p><h6 id="bd"  class="ch6">{{ Auth::user()->bday }}</h6></div><hr  class="hrc">
+         
+            <div class="w"><p>{{__('lang.user')}}</p><h6 id="FName" class="ch6">{{ Auth::user()->Fname }} {{ Auth::user()->Lname }}</h6></div><hr class="hrc">
+            <div class="w"><p>{{__('lang.bd')}}</p><h6 id="bd"  class="ch6">{{ Auth::user()->bday }}</h6></div><hr  class="hrc">
             <div class="w"><p>Email:</p><h6 id="Email"  class="ch6">{{ Auth::user()->email }}</h6></div><hr  class="hrc">
            
-            <div style="display: none;" id="Settings">
-               <button id ="update" type="button" class="btn butt" onclick="Update()">Update</button>
-               <button id="delete" type="button"  class="btn butt" onclick="Delete()">Delete</button>
-            </div>
           </div>
-           <div class="class21 some1" id="ch24"> <hr id="class2">
-                <table align="center" border="1">
+
+
+
+
+
+
+
+
+
+           <div class="class21 some1" id="ch24"> <hr id="class2" style="width:121%">
+                <table align="center" border="1" >
                   <tbody>
-                  <tr><th colspan="4" style="text-align: center;">GRADE</th></tr>
+                  <tr style="width: 90%;"><th colspan="4" style="text-align: center;">{{__('lang.grade')}}</th></tr>
                   <tr align="center">
-                    <th width="15%">In Percent</th>
-                    <th width="15%">Alphabeti</th>
-                    <th width="15%">In Points</th>
-                    <th width="25%">Traditional</th>
+                    <th width="15%">{{__('lang.inpr')}}</th>
+                    <th width="15%">{{__('lang.alph')}}</th>
+                    <th width="15%">{{__('lang.inpo')}}</th>
+                    <th width="25%">{{__('lang.tr')}}</th>
                   </tr>
                   <tr align="center">
                    <td>95-100</td>
                    <td>A</td>
                    <td>4</td>
-                   <td rowspan="2">Excellent</td>
+                   <td rowspan="2">{{__('lang.ex')}}</td>
                   </tr>
                    <tr align="center">
                    <td>90-94</td>
@@ -463,7 +461,7 @@ $sql = "SELECT * FROM courses where users_id = $uid";
                    <td>85-89</td>
                    <td>B+</td>
                    <td>3.33</td>
-                   <td rowspan="4">Good</td>
+                   <td rowspan="4">{{__('lang.go')}}</td>
                   </tr>
                    <tr align="center">
                    <td>80-84</td>
@@ -484,7 +482,7 @@ $sql = "SELECT * FROM courses where users_id = $uid";
                    <td>65-69</td>
                    <td>C</td>
                    <td>2</td>
-                   <td rowspan="4">Satisfactory</td>
+                   <td rowspan="4">{{__('lang.sat')}}</td>
                   </tr>
                    <tr align="center">
                    <td>60-64</td>
@@ -505,7 +503,7 @@ $sql = "SELECT * FROM courses where users_id = $uid";
                    <td>25-49</td>
                    <td>FX</td>
                    <td>0</td>
-                   <td rowspan="3">Unsatisfactory</td>
+                   <td rowspan="3">{{__('lang.unsat')}}</td>
                   </tr>
                     <tr align="center">
                    <td>0-24</td>
@@ -514,10 +512,35 @@ $sql = "SELECT * FROM courses where users_id = $uid";
                  </tr>
                 </tbody>
                 </table>
-                  
-               </div>    
+                   
          
-       </div>
+    
+
+
+           <br><br><hr class="hrc">
+           <h3>Messeges</h3>
+            <div class="msg" style="width: 100%;background-color: lightgrey;padding: 5px;">
+
+             <div class="sending">
+             @if($message = Session::get('info'))
+          <div class="alert alert-success alert-block">
+            <strong>{{ $message }}</strong>
+          </div>
+          @endif
+              
+               <form action="{{  route('sendm')}}" id="usrform" method="post">
+                {{ csrf_field() }}
+                <input type="email" name="from" style="display: none;" value="{{ Auth::user()->email }}" required>
+                    <input type="email" value="190103138@stu.sdu.edu.kz" name="to" style="display: none;" required>
+                     <h5>Send message to admin</h5><input type="submit" value="Send" class="butt" style="margin-top: -35px;">
+                    <textarea rows="4" cols="34" name="sms" required>
+                     Enter text here...</textarea></div>
+                          
+                          </form>
+                  <br>
+                    
+            
+               </div>  
      </div>
 
   @endif

@@ -19,7 +19,14 @@
          $("#overlay2").show();
 
     }
-    
+    function sout(){
+       n  = window.location.href;
+       window.location.href = n.substring(0, n.lastIndexOf('/')-8);
+ /*         console.log(window.location.href = e)
+   console.log() alert();
+*/
+   
+    }
      function LogInOff(){
      /* window.location = "/GCtest2/public/welcome";*/
        /* $("#overlay2").hide();*/
@@ -70,7 +77,7 @@
 
     <div id="overlay2" class="ov">
         <div class="bg1">
-           <a href="{{ url('welcome/logout') }}"><i  class="fa fa-close" style="color: black; float: right;"></i></a> 
+           <a onclick="sout()"><i  class="fa fa-close" style="color: black; float: right;"></i></a> 
          <!--  @if(isset(Auth::user()->email))
    
          <script type="text/javascript">

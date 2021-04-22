@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Route;
+use App;
 use App\Models\Courses;
 use Illuminate\Http\Request;
 use App\Models\Users;
 use Validator;
-use Illuminate\Support\Facades\Auth;
+
 use public\image;
 class CoursesController extends Controller
 {
@@ -41,13 +42,13 @@ class CoursesController extends Controller
         $course = new Courses;
     $course->users_id=$request->input('userid');
     $course->CourseName=$request->input('course');
-    $course->CourseImage=$filename;
+    $course->CourseImage=$file->getClientOriginalName();;
     $course->numOfAss=$request->input('AssMethNum');
     $course->numOfInsertAss='0';
     $course->persOfInsertAss='0';
     $course->Goal=$request->input('goalPersent');
     $course->CurentPer=$request->input('curper');
-    $course->save();
+    $course->save();/*$file->getClientOriginalName()*/
 
          $file->move($destPath,$file->getClientOriginalName());
     }
@@ -78,17 +79,14 @@ class CoursesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function delete(Request $request)
-    {   $this->validate($request, [
+    {  
+     $this->validate($request, [
          'cid'=>'required'
     ]);
-    /* $users = Users::where('email', '=', $request->input('email'))->first();
-        echo "del";*/
-         $id = $request->input('cid');
-         $course=Courses::findOrFail($id);
+      
+         $course=Courses::findOrFail($request->input('cid'));
         if($course->delete()){
              return back();
-        }else{
-            echo "string";
         }
     }
 
@@ -102,9 +100,16 @@ class CoursesController extends Controller
     {
         
     }*/
-    public function show($id){
-     
+    public function show($lang,$id){
+     App::setlocale($lang);
      /*return view('courses');*/
+
+     return view("courses",["nameC" => $id]);
+    }
+     public function show1($id){
+    
+     /*return view('courses');*/
+
      return view("courses",["nameC" => $id]);
     }
     /**

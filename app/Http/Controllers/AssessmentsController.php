@@ -40,6 +40,8 @@ class AssessmentsController extends Controller
          }
     }
 
+    
+    
      public function update(Request $request)
     {  $this->validate($request, [
          'selectu'=>'required',
@@ -55,10 +57,10 @@ class AssessmentsController extends Controller
           $cours3 = Courses::where('id', '=', $request->input('cidu'))->first()->persOfInsertAss;
           $total = $cours3 - $perAss;
         if ($total+$request->input('weightu') > 100) {
-         	return redirect()->back()->with('info','You reached to the 100% or Please change the percent, because the sum of all assessment methods percent will be bigger than 100!  ');
+          return redirect()->back()->with('info','You reached to the 100% or Please change the percent, because the sum of all assessment methods percent will be bigger than 100!  ');
          }else{
         
-    	$assessment = assessments::findOrFail($request->input('asidu'));
+      $assessment = assessments::findOrFail($request->input('asidu'));
          $assessment->AssName=$request->input('selectu');;
          $assessment->PerFromTotal=$request->input('weightu');
          $assessment->CurentPer=$request->input('cweightu');
@@ -68,13 +70,12 @@ class AssessmentsController extends Controller
           $cours->persOfInsertAss=$total+$request->input('weightu');
           $cours->save();
           if ($total + $request->input('weightu')<100 ) {
-         	return redirect()->back()->with('info','Add new assessment method ,the sum of all assessment methods percent will be smaller  than 100!   ');
+          return redirect()->back()->with('info','Add new assessment method ,the sum of all assessment methods percent will be smaller  than 100!   ');
          }
           return back();
      }
         
     }
-
 
 
 
@@ -97,10 +98,12 @@ class AssessmentsController extends Controller
          $id = $request->input('asid');
           $ass=assessments::findOrFail($id);
         if($ass->delete()){
-        	
+          
              return back();
         }else{
             echo "string";
         }
     }
+
+       
 }

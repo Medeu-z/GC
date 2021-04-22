@@ -42,6 +42,7 @@ if ($users === null) {
     $password = $request->input('password');// password is form field
     $hashed = Hash::make($password);
     $account->password=$hashed;
+    $account->is_admin="No";
     $account->save();
     $d = new \stdClass();
     $d->sender='Grades Calculated';
@@ -69,8 +70,13 @@ return view('login');
          'email' => $request->get('email'),
          'password' => $request->get('password')
        );
+        $addch = Users::where('email', '=', $user_date['email'])->first()->is_admin;
        if(Auth::attempt($user_date)){
+        if($addch === "No"){
         return redirect('welcome/success');
+        }else{
+          return redirect('welcome/admin');
+        }
        }else{
         return back()->with('error', 'Wrong Login Details');
        }
@@ -127,10 +133,30 @@ return view('login');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+         $this->validate($request, [
+         'userid'=>'required',
+         'Fname'=>'required',
+         'Lname'=>'required',
+         'bday'=>'required',
+         'email'=>'required',
+         'password'=>'required'
+    ]);
+         
+         $account = Users::findOrFail($request->input('userid'));
+         $account->Fname=$request->input('Fname');
+         $account->Lname=$request->input('Lname');
+         $account->bday=$request->input('bday');
+         $account->email=$request->input('email');
+         $password = $request->input('password');// password is form field
+         $hashed = Hash::make($password);
+         $account->password=$hashed;
+         $account->save();
+        
+        return back();
     }
+  
 
     /**
      * Remove the specified resource from storage.
@@ -138,8 +164,15 @@ return view('login');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function delete(Request $request)
+    {  $this->validate($request, [
+         'userid'=>'required'
+    ]);
+         $ass=Users::findOrFail($request->input('userid'));
+        if($ass->delete()){
+            
+             return redirect('welcome');
+        }
     }
+    
 }
