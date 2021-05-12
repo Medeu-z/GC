@@ -12,9 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('', function () {
-  return redirect('/eng');
-});
+
 
 Route::get('/ac', function () {
     return view('test');
@@ -49,6 +47,9 @@ Route::get('/welcome/admin/{lang?}', function ($lang ="eng") {
 });
 Route::get('/{lang?}/welcome/signup', function ($lang ="eng") {
 	App::setlocale($lang);
+    return view('signup');
+});
+Route::get('//welcome/signup', function () {
     return view('signup');
 });
 Route::post('/insert','App\Http\Controllers\UsersController@insert')->name('file.ins');
