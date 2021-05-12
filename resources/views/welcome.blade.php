@@ -17,7 +17,7 @@
       n  = window.location.href;
     function SingnUpOn(){
 
-      m = n.substring(0, n.lastIndexOf('/'))+"/welcome/signup"+n.substring(n.lastIndexOf('/'));
+      m = n.substring(0, n.lastIndexOf('/'))+"welcome/signup"+n.substring(n.lastIndexOf('/'));
        var str = n.substring(n.lastIndexOf('/'));
         var nl = str.length;
       
@@ -32,7 +32,7 @@
     }
     function LogIn(){
        /*n  = window.location.href;*/
-       m = n.substring(0, n.lastIndexOf('/'))+"/welcome/login"+n.substring(n.lastIndexOf('/'));
+       m = n.substring(0, n.lastIndexOf('/'))+"welcome/login"+n.substring(n.lastIndexOf('/'));
        
          var str = n.substring(n.lastIndexOf('/'));
         var nl = str.length;
