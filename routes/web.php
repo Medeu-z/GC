@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('http://gradecalculated.herokuapp.com', function () {
+    return redirect('/eng');
 
+});
 
 Route::get('/ac', function () {
     return view('test');
