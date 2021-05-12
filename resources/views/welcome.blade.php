@@ -16,13 +16,33 @@
         <script>
       n  = window.location.href;
     function SingnUpOn(){
+
+      m = n.substring(0, n.lastIndexOf('/'))+"/welcome/signup"+n.substring(n.lastIndexOf('/'));
+       var str = n.substring(n.lastIndexOf('/'));
+        var nl = str.length;
       
-       window.location = n+"/welcome/signup";
+        if (nl == 1) {
+           window.location = m + "eng";
+        }else{
+           window.location = m;
+        }
+       
+       /*window.location = n+"/welcome/signup";*/
        /*  $("#overlay1").show();*/
     }
     function LogIn(){
        /*n  = window.location.href;*/
-          window.location = n+"/welcome/login";
+       m = n.substring(0, n.lastIndexOf('/'))+"/welcome/login"+n.substring(n.lastIndexOf('/'));
+       
+         var str = n.substring(n.lastIndexOf('/'));
+        var nl = str.length;
+        
+        if (nl == 1) {
+           window.location = m + "eng";
+        }else{
+           window.location = m;
+        }
+        /*  window.location = n+"/welcome/login";*/
 
     }
     
@@ -92,7 +112,7 @@
             
         </div>
         <div id="sign_log">
-          
+
             <button id = "sign_up" type="button" class="btn" onclick="SingnUpOn()">{{__('lang.sign')}}</button>
             <button id="log_in" type="button"  class="btn" onclick="LogIn()">{{__('lang.login')}}</button>
         </div>

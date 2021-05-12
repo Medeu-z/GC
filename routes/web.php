@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('http://gradecalculated.herokuapp.com', function () {
+/*Route::get('', function () {
     return redirect('/eng');
 
 });
-
+*/
 Route::get('/ac', function () {
     return view('test');
 });
@@ -29,14 +29,14 @@ Route::get('/{lang?}', function ($lang ="eng") {
 	App::setlocale($lang);
     return view('welcome');
 });
-Route::get('welcome', function () {
+/*Route::get('welcome', function () {
     return view('welcome');
 });
 Route::get('/{lang?}/welcome', function ($lang ="eng") {
     App::setlocale($lang);
     return view('welcome');
-});
-Route::get('/{lang?}/welcome/login', function ($lang ="eng") {
+});*/
+Route::get('/welcome/login/{lang?}', function ($lang ="eng") {
 	App::setlocale($lang);
     return view('login');
 });
@@ -48,7 +48,7 @@ Route::get('/welcome/admin/{lang?}', function ($lang ="eng") {
     App::setlocale($lang);
     return view('admin');
 });
-Route::get('/{lang?}/welcome/signup', function ($lang ="eng") {
+Route::get('/welcome/signup/{lang?}', function ($lang ="eng") {
 	App::setlocale($lang);
     return view('signup');
 });

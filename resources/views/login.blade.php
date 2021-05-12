@@ -21,7 +21,7 @@
     }
     function sout(){
        n  = window.location.href;
-       window.location.href = n.substring(0, n.lastIndexOf('/')-8);
+         window.location.href = n.substring(0, n.lastIndexOf('/')-14) + n.substring(n.lastIndexOf('/'));
  /*         console.log(window.location.href = e)
    console.log() alert();
 */
